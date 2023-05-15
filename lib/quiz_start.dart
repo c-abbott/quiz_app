@@ -23,7 +23,7 @@ class QuizStart extends StatelessWidget {
             'Learn Flutter the fun way!',
             style: buttonText,
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 60),
           CustomButton(
             text: 'Start Quiz',
             onPressed: () {},

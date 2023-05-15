@@ -12,13 +12,23 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        minimumSize: const Size(200, 60), // Set the minimum size here
+        padding: const EdgeInsets.all(16.0), // And add padding if needed
         backgroundColor: buttonColor,
         foregroundColor: white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32.0),
         ),
       ),
-      child: Text(text),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'ProximaNova',
+          color: white,
+        ),
+      ),
     );
   }
 }
