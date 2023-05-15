@@ -1,39 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/constants.dart';
+import 'package:quiz_app/custom_button.dart';
 
 class QuizStart extends StatelessWidget {
-  const QuizStart({super.key});
+  const QuizStart({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          'assets/images/quiz-logo.png',
-          width: 280,
-        ),
-        const SizedBox(height: 60),
-        const Text(
-          'Learn Flutter the fun way!',
-          style: TextStyle(
-            fontSize: 20,
-            fontFamily: 'ProximaNova',
-            color: Color.fromARGB(255, 245, 245, 255),
+  Widget build(context) {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: gradientDecoration(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 280,
           ),
-        ),
-        const SizedBox(height: 30),
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 0, 80, 255),
-            foregroundColor: const Color.fromARGB(255, 245, 245, 255),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(32.0),
-            ),
+          const SizedBox(height: 60),
+          const Text(
+            'Learn Flutter the fun way!',
+            style: buttonText,
           ),
-          child: const Text('Start Quiz'), // Add this line
-        ),
-      ],
+          const SizedBox(height: 30),
+          CustomButton(
+            text: 'Start Quiz',
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }
