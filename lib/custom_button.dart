@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
         minimumSize: const Size(200, 60), // Set the minimum size here
         padding: const EdgeInsets.all(16.0), // And add padding if needed
         backgroundColor: buttonColor,
-        foregroundColor: white,
+        foregroundColor: skWhite,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32.0),
         ),
@@ -27,7 +27,7 @@ class CustomButton extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.bold,
           fontFamily: 'ProximaNova',
-          color: white,
+          color: skWhite,
         ),
       ),
     );

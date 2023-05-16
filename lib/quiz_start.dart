@@ -16,7 +16,8 @@ class QuizStart extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/quiz-logo.png',
-            width: 280,
+            width: 300,
+            color: skWhite,
           ),
           const SizedBox(height: 60),
           const Text(
