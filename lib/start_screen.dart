@@ -3,7 +3,9 @@ import 'package:quiz_app/custom_button.dart';
 import 'package:quiz_app/constants.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -21,10 +23,7 @@ class StartScreen extends StatelessWidget {
           style: buttonText,
         ),
         const SizedBox(height: 60),
-        CustomButton(
-          text: 'Start Quiz',
-          onPressed: () {},
-        ),
+        CustomButton(text: 'Start Quiz', onPressed: startQuiz),
       ],
     );
   }
