@@ -9,7 +9,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return ElevatedButton.icon(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(200, 60), // Set the minimum size here
@@ -20,7 +20,8 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(32.0),
         ),
       ),
-      child: Text(
+      icon: const Icon(Icons.arrow_right_alt),
+      label: Text(
         text,
         style: const TextStyle(
           fontSize: 16,
