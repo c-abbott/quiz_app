@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/custom_button.dart';
+import 'package:quiz_app/start_button.dart';
 import 'package:quiz_app/constants.dart';
 
 class StartScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class StartScreen extends StatelessWidget {
           style: buttonText,
         ),
         const SizedBox(height: 60),
-        CustomButton(text: 'Start Quiz', onPressed: startQuiz),
+        StartButton(text: 'Start Quiz', onPressed: startQuiz),
       ],
     );
   }
