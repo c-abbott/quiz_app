@@ -13,13 +13,13 @@ class QuestionButton extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        minimumSize: const Size(150, 30), // Set the minimum size here
+        minimumSize: const Size(300, 20), // Set the minimum size here
         padding: const EdgeInsets.symmetric(
             vertical: 8.0, horizontal: 16.0), // Reduce the vertical padding
         backgroundColor: buttonColor,
         foregroundColor: skWhite,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32.0),
+          borderRadius: BorderRadius.circular(25.0),
         ),
       ),
       icon: const Icon(Icons.arrow_right_alt),
