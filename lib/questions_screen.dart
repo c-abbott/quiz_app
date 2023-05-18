@@ -41,7 +41,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               style: const TextStyle(
                   color: skWhite,
                   fontFamily: 'ProximaNova',
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
