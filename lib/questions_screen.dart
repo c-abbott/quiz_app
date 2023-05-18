@@ -27,13 +27,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             style: TextStyle(color: skWhite),
           ),
           const SizedBox(height: 32),
-          AnswerButton(text: currentQuestion.answers[0], onPressed: () {}),
-          const SizedBox(height: 16),
-          AnswerButton(text: currentQuestion.answers[1], onPressed: () {}),
-          const SizedBox(height: 16),
-          AnswerButton(text: currentQuestion.answers[2], onPressed: () {}),
-          const SizedBox(height: 16),
-          AnswerButton(text: currentQuestion.answers[3], onPressed: () {}),
+          ...currentQuestion.answers.map((answer) {
+            return AnswerButton(
+              text: answer,
+              onPressed: () {},
+            );
+          }),
         ],
       ),
     );
