@@ -19,21 +19,28 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            currentQuestion.question,
-            style: TextStyle(color: skWhite),
-          ),
-          const SizedBox(height: 32),
-          ...currentQuestion.answers.map((answer) {
-            return AnswerButton(
-              text: answer,
-              onPressed: () {},
-            );
-          }),
-        ],
+      child: Container(
+        margin: const EdgeInsets.all(36),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              currentQuestion.question,
+              style: const TextStyle(color: skWhite),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 32),
+
+            /// ... unpacks the list of AnswerButton widgets
+            ...currentQuestion.getShuffledAnswers().map((answer) {
+              return AnswerButton(
+                text: answer,
+                onPressed: () {},
+              );
+            }),
+          ],
+        ),
       ),
     );
   }
