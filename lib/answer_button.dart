@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants.dart';
 
-class QuestionButton extends StatelessWidget {
+class AnswerButton extends StatelessWidget {
+  const AnswerButton({required this.text, required this.onPressed, Key? key})
+      : super(key: key);
+
   final String text;
   final VoidCallback onPressed;
 
-  const QuestionButton(
-      {required this.text, required this.onPressed, super.key});
-
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
+    return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(300, 20), // Set the minimum size here
         padding: const EdgeInsets.symmetric(
-            vertical: 8.0, horizontal: 16.0), // Reduce the vertical padding
+          vertical: 12.0,
+          horizontal: 16.0,
+        ), // Reduce the vertical padding
         backgroundColor: buttonColor,
         foregroundColor: skWhite,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25.0),
         ),
       ),
-      icon: const Icon(Icons.arrow_right_alt),
-      label: Text(
+      child: Text(
         text,
         style: const TextStyle(
           fontSize: 12,
