@@ -13,9 +13,17 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    setState(() {
+      currentQuestionIndex++;
+    });
+  }
+
   @override
   Widget build(context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currentQuestionIndex];
 
     return SizedBox(
       width: double.infinity,
@@ -27,18 +35,25 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           children: [
             Text(
               currentQuestion.question,
-              style: const TextStyle(color: skWhite),
+              style: const TextStyle(
+                  color: skWhite,
+                  fontFamily: 'ProximaNova',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 48),
 
             /// ... unpacks the list of AnswerButton widgets
             ...currentQuestion.getShuffledAnswers().map((answer) {
-              return AnswerButton(
-                text: answer,
-                onPressed: () {},
+              return Container(
+                margin: const EdgeInsets.only(bottom: 12), // Adjust as needed
+                child: AnswerButton(
+                  text: answer,
+                  onPressed: answerQuestion,
+                ),
               );
-            }),
+            }).toList(),
           ],
         ),
       ),

@@ -8,6 +8,7 @@ const buttonColor = Color.fromARGB(255, 0, 80, 255);
 const buttonText = TextStyle(
   fontSize: 20,
   fontFamily: 'ProximaNova',
+  fontWeight: FontWeight.bold,
   color: skWhite,
 );
 

@@ -26,9 +26,9 @@ class AnswerButton extends StatelessWidget {
       ),
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: const TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
+          fontSize: 16,
           fontFamily: 'ProximaNova',
           color: skWhite,
         ),
