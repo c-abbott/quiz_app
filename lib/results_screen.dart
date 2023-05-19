@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/start_button.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen(
@@ -36,24 +37,26 @@ class ResultsScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.all(36),
+        margin: const EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Score: $numCorrectAnswers/$numTotalQuestions',
-              style: const TextStyle(
-                  color: skWhite,
-                  fontFamily: 'ProximaNova',
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+            SizedBox(
+              width: double.infinity,
+              child: Text(
+                'Your answers earned you a score of: $numCorrectAnswers/$numTotalQuestions',
+                style: const TextStyle(
+                    color: skWhite,
+                    fontFamily: 'ProximaNova',
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
+              ),
             ),
-            const SizedBox(height: 48),
+            const SizedBox(height: 16),
             QuestionsSummary(getSummaryData()),
-            const SizedBox(height: 48),
-            ElevatedButton(
-                onPressed: restartQuiz, child: const Text('Restart Quiz'))
+            const SizedBox(height: 32),
+            StartButton(text: 'Restart Quiz', onPressed: restartQuiz),
           ],
         ),
       ),

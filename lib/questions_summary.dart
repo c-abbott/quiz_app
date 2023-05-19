@@ -27,7 +27,7 @@ class QuestionsSummary extends StatelessWidget {
                     child: Text(
                       ((data['question_index'] as int) + 1).toString(),
                       style: const TextStyle(
-                          color: skWhite,
+                          color: primaryColor,
                           fontSize: 20,
                           fontFamily: 'ProximaNova',
                           fontWeight: FontWeight.bold),
