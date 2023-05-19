@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
-import 'package:quiz_app/start_button.dart';
+import 'package:quiz_app/buttons/start_button.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen(
@@ -33,6 +33,7 @@ class ResultsScreen extends StatelessWidget {
     final numCorrectAnswers = summaryData.where((data) {
       return data['correct_answer'] == data['user_answer'];
     }).length;
+    final double quizPercentage = (numCorrectAnswers / numTotalQuestions) * 100;
 
     return SizedBox(
       width: double.infinity,
@@ -44,7 +45,7 @@ class ResultsScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Text(
-                'Your answers earned you a score of: $numCorrectAnswers/$numTotalQuestions',
+                'Your answers earned a score of ${quizPercentage.toStringAsFixed(0)}%',
                 style: const TextStyle(
                     color: skWhite,
                     fontFamily: 'ProximaNova',
@@ -56,7 +57,11 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(height: 16),
             QuestionsSummary(getSummaryData()),
             const SizedBox(height: 32),
-            StartButton(text: 'Restart Quiz', onPressed: restartQuiz),
+            StartButton(
+              text: 'Restart Quiz',
+              onPressed: restartQuiz,
+              icon: Icons.restart_alt,
+            ),
           ],
         ),
       ),
