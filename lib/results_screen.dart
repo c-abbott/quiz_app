@@ -29,9 +29,10 @@ class ResultsScreen extends StatelessWidget {
   @override
   Widget build(context) {
     final numTotalQuestions = questions.length;
-    final numCorrectAnswers = summaryData.where((data) {
-      return data['correct_answer'] == data['user_answer'];
-    }).length;
+
+    final numCorrectAnswers = summaryData
+        .where((data) => data['correct_answer'] == data['user_answer'])
+        .length;
     final double quizPercentage = (numCorrectAnswers / numTotalQuestions) * 100;
 
     return SizedBox(
