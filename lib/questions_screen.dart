@@ -48,7 +48,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             const SizedBox(height: 48),
 
             /// ... unpacks the list of AnswerButton widgets
-            ...currentQuestion.getShuffledAnswers().map((answer) {
+            ...currentQuestion.shuffledAnswers.map((answer) {
               return Container(
                 margin: const EdgeInsets.only(bottom: 12), // Adjust as needed
                 child: AnswerButton(
